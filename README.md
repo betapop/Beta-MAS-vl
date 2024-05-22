@@ -11,7 +11,7 @@ a submod that adds more romance in your monika after story! including compliment
 - And more soon!
 
 ## 🍄 Installation
-Coming soon ☆
+[You can get the newest release here!](https://github.com/betapop/Beta-MAS-vl/releases/tag/v1.0.0)
 
 ## 💓 Special Thanks to...
 The MAS github for being massively useful!
