@@ -6,7 +6,7 @@ a submod that adds more romance in your monika after story! including compliment
 - 4 New songs!
 - 3 Added compliments!
 - 6 Added interactions!
-- 5 More dialogues!
+- 7 More dialogues!
 - Aroace/QPR options!
 - And more soon!
 
