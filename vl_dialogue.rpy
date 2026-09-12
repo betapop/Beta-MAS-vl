@@ -117,23 +117,42 @@ init 5 python:
     addEvent(
         Event(
             persistent.event_database,
-            eventlabel="monika_vl_checkin",
+            eventlabel="vl_checkin",
             category=["us"],
             prompt="I'm sorry I don't check in as often.",
             random=False,
             pool=True,
-            aff_range=(mas_aff.NORMAL, None)
+            aff_range=(mas_aff.HAPPY, None)
         )
     )
 
 
-label monika_vl_checkin:
-    m 1hub "Don’t worry about that too much, [player]."
-    m 3rkb "Obviously, I do miss you when you’re gone..."
-    m 4hksdlb "But I know you have things to do, and life to live."
-    m 3tksdlb "And I don’t want to stop you from experiencing that."
-    m 3hub "All I ask is that if it’s for a while, you tell me, okay?"
-    m 5kublb "I can wait. And I'll be glad to wait if I know I'll see your cute face when you’re back!"
+label vl_checkin:
+    $ ev = mas_getEV("vl_checkin")
+    if ev.shown_count == 0:
+        m 1hub "Don’t worry about that too much, [player]."
+        m 3rkb "Obviously, I do miss you when you’re gone..."
+        m 4hksdlb "But I know you have things to do, and life to live."
+        m 3tksdlb "And I don’t want to stop you from experiencing that."
+        m 3hub "All I ask is that if it’s for a while, you tell me, okay?"
+        m 5kublb "I can wait. And I'll be glad to wait if I know I'll see your cute face when you’re back!"
+
+    elif ev.shown_count == 1:
+        m "Gosh, [player], it's really okay!"
+        m "Thank you for checking in so much regardless."
+        m "If you think about it this way...{w} I have a lot more time to practice programming or hobbies..."
+        m "Plus, I can always tell when you're using your computer, so I know you're still there..."
+        m "As long as you're happy, I'm happy, [player]. I just want to see you enjoy youself, you know?"
+        m "If being with me is more of a chore then anything else, then is it even worth it?"
+        m "..."
+        m "Sorry for rambling, haha! Really, though. As long as you're not gone for like, months on end, I'll be okay."
+        m "Okay, [mas_get_player_nickname()]? I love you~"
+        return "love"
+
+    else:
+        m "Thank you, [player]~ But I promise I'm fine."
+        m "Just let me know when you leave for a while, okay?"
+
 
 return
 
@@ -155,7 +174,7 @@ label monika_vl_snugclose:
     m 2tubsb "Moving closer? Well, I won’t complain~"
     m 5rkbfb "I just wish we could be right next to each other, cuddling..."
     m 5hkbfb "But right now, this is the next best thing. Ahaha!"
-    m 3hubfb "I love you so much… and let’s continue on with the day!"
+    m 3hubfb "I love you so much... and let’s continue on with the day!"
 
 return "love"
 

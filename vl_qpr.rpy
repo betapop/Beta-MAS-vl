@@ -1,6 +1,9 @@
 # i had to rewrite all of this since that power outage... should be fine
 # now though lol
 
+init 5 python in mas_bookmarks_derand:
+    label_prefix_map["vl_"] = label_prefix_map["monika_"]
+
 default persistent.vl_isaroace = False
 default persistent.vl_isaro = False
 default persistent.vl_isace = False
