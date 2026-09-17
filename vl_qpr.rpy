@@ -123,9 +123,9 @@ label vl_acespec_contin:
     else:
         pass
     
-    m "Thank you for telling me again, [player]. It might take a while for me to adjust, but I really apperiate that you told me."
-    m "And if I ever bring up something that's too uncomfortable for you, you can always press X to let me know, okay?"
-    m "I love you so much, [mas_get_player_nickname()]. Nothing will ever change that."
+    m 3fkblb "Thank you for telling me again, [player]. It might take a while for me to adjust, but I really apperiate that you told me."
+    m 2hkblsdlb "And if I ever bring up something that's too uncomfortable for you, you can always press X to let me know, okay?"
+    m 1fkbsb "I love you so much, [mas_get_player_nickname()]. Nothing will ever change that."
     m 3hublb "Right! Let’s continue with our day, shall we?~"
 return "love"
 
@@ -145,7 +145,7 @@ init 5 python:
 label vl_qpr:
     $ ev = mas_getEV("vl_qpr")
     if ev.shown_count == 0:
-        m "Oh? What type of relationship, [player]?"
+        m 1etb "Oh? What type of relationship, [player]?"
         jump vl_relationship_loop
 
     else:
@@ -183,5 +183,5 @@ label vl_relationship_loop:
             return
 
         "Nevermind.":
-            "Oh, alright. Feel free to ask again if you do want to!"
+            m 1eub "Oh, alright. Feel free to ask again if you do want to!"
             return

@@ -43,7 +43,6 @@ init 5 python:
         )
     )
 
-
 label monika_vl_kissher:
     if mas_isMoniEnamored(higher=True) and persistent._mas_first_kiss is not None:
         menu:
@@ -138,20 +137,20 @@ label vl_checkin:
         m 5kublb "I can wait. And I'll be glad to wait if I know I'll see your cute face when you’re back!"
 
     elif ev.shown_count == 1:
-        m "Gosh, [player], it's really okay!"
-        m "Thank you for checking in so much regardless."
-        m "If you think about it this way...{w} I have a lot more time to practice programming or hobbies..."
-        m "Plus, I can always tell when you're using your computer, so I know you're still there..."
-        m "As long as you're happy, I'm happy, [player]. I just want to see you enjoy youself, you know?"
-        m "If being with me is more of a chore then anything else, then is it even worth it?"
-        m "..."
-        m "Sorry for rambling, haha! Really, though. As long as you're not gone for like, months on end, I'll be okay."
-        m "Okay, [mas_get_player_nickname()]? I love you~"
+        m 1hkb "Gosh, [player], it's really okay!"
+        m 2lkblb "Thank you for checking in so much regardless."
+        m 3dub "If you think about it this way...{w} I have a lot more time to practice programming or hobbies..."
+        m 2kub "Plus, I can always tell when you're using your computer, so I know you're still there..."
+        m 5mublb "As long as you're happy, I'm happy, [player]. I just want to see you enjoy youself, you know?"
+        m 3dkd "If being with me is more of a chore then anything else, then is it even worth it?"
+        m 2mkc "..."
+        m 2hksdlb "Sorry for rambling, haha! Really, though. As long as you're not gone for like, months on end, I'll be okay."
+        m 1tublb "Okay, [mas_get_player_nickname()]? I love you~"
         return "love"
 
     else:
-        m "Thank you, [player]~ But I promise I'm fine."
-        m "Just let me know when you leave for a while, okay?"
+        m 3hub "Thank you, [player]~ But I promise I'm fine."
+        m 1fub "Just let me know when you leave for a while, okay?"
 
 
 return
@@ -260,10 +259,10 @@ init 5 python:
 
 label monika_vl_hotdogsan:
     m 1eub "[player], I had a question."
-    m 3tub "...Is a hot dog a sandwich?"
+    m 3tub "...Is a hot dog a sandwich?{nw}"
     $ _history_list.pop()
     menu:
-        m "...Is a hot dog a sandwich?"
+        m "...Is a hot dog a sandwich?{fast}"
 
         "Yes, it is.":
             m 1hub "I'm glad we could agree!"
@@ -271,22 +270,23 @@ label monika_vl_hotdogsan:
             m 3msp "That literally is the definition of a sandwich!"
             m 2gsd "Sure, it’s not your typical sandwich but, that doesn’t mean it isn’t one."
             m 1hub "Anyways, thanks for sharing my opinion~ ehehe."
+            return
         
         "No, it’s not.":
             m 4htb "Why wouldn’t it be? It has the qualifications to be one!"
             m 3mtb "The bread's a little different, but does that really matter?"
-            m 3eud "It’s still at the end of the day, bread with contents inside it."
+            m 3eud "It’s still at the end of the day, bread with contents inside it.{nw}"
             $ _history_list.pop()
             menu:
-                m "It’s still at the end of the day, bread with contents inside it."
+                m "It’s still at the end of the day, bread with contents inside it.{fast}"
 
                 "It’s not what you think of when you think sandwich.":
                     m 2wfd "But–"
                     m 3dfd "Look. Even if it’s not a normal, typical sandwich, it technically is still one!"
-                    m 4mfo "You probably don’t think that cereal is soup either, huh?"
+                    m 4mfo "You probably don’t think that cereal is soup either, huh?{nw}"
                     $ _history_list.pop()
                     menu:
-                        m "You probably don’t think that cereal is soup either, huh?"
+                        m "You probably don’t think that cereal is soup either, huh?{fast}"
 
                         "[m_name].":
                             m 2hfo "What! I'm right, aren’t I?"
@@ -301,8 +301,7 @@ label monika_vl_hotdogsan:
                 "Fine, you win.":
                     m 3tsd "I can hear your tone of voice, but I'll take victory regardless."
                     m 2hkb "Thank you for picking the correct side, [player]. I love you!"
-
-return "love"
+    return "love"
 
 init 5 python:
     addEvent(
@@ -328,6 +327,90 @@ label monika_vl_randlove:
             menu:
                 "I love you too!":
                     m 1kubsb "Hehe~"
+    return
+
+# new dialogue (no monika tag)
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="vl_gaze",
+            category=["romance"],
+            prompt="Gaze at [m_name]s...",
+            random=False,
+            pool=True,
+            aff_range=(mas_aff.AFFECTIONATE, None)
+        )
+    )
+
+label vl_gaze:
+    menu:
+        "Lips.":
+            if mas_isMoniEnamored(higher=True) and persistent._mas_first_kiss is not None:
+                m 2tublb "...[player]?"
+                m 2mubsb "Do you want to ask, or are you going to continue staring?~"
+                menu:
+                    "Can I kiss you, [m_name]?":
+                        m 1hubsb "Of course, [mas_get_player_nickname()]!"
+                        call monika_kissing_motion_short
+                        m 5fkbfb "I never get tired of it, ehehe."
+            else:
+                m 2tublb "My eyes are up here, [player]~"
+
+        "Smile.":
+            m 2tublsdlb "Pff... Why are you looking at me like that, [mas_get_player_nickname()]?"
+            menu:
+                "You have the prettiest smile.":
+                    jump vl_smilegaze                       
+    return
+
+# i feel like this is coded weird but i can't think of something better
+
+default persistent.vlgazeseen = 0
+
+label vl_smilegaze:
+    if persistent.vlgazeseen == 0:
+        m 1subsd "..."
+        m 1rkbfa "..."
+        m 2dfbfp "Gosh, I...{w} You’re such a dork, you know that?"
+        m 1msbfb "Getting me all flustered! I suppose that’s to be expected, though."
+        m 1hfbfb "Thank you, [player]. I love you so much~"
+        $ persistent.vlgazeseen += 1
+        return "love"
+    elif persistent.vlgazeseen == 1:
+        m 3tubsb "I hope you know, I think your smile's far cuter than mines, [player]."
+        $ persistent.vlgazeseen += 1
+    elif persistent.vlgazeseen == 2:
+        m 2tsbfb "Staring again, hm~?"
+        $ persistent.vlgazeseen += 1
+    else:
+        m 1wubla "..."
+        m 1subsu "..."
+        m 1hfbfa "..."
+
+    return
+
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="vl_cutenessaggro",
+            category=["romance", "us"],
+            prompt="You give me cuteness aggression.",
+            random=False,
+            pool=True,
+            aff_range=(mas_aff.HAPPY, None)
+        )
+    )
+
+label vl_cutenessaggro:
+    m 3etblb "Is that so, [mas_get_player_nickname()]?"
+    m 2rtsdlb "Well, I guess it would make sense, this type of phenomenon is fairly common in adults."
+    m 3hkblb "Of course, i’m not immune either. Sometimes when I look at you, I feel the urge to just...{w=0.5} squeeze you?"
+    m 1hkblb "It’s funny to know we both set each other off."
+    m 7tfblu "And who knows, maybe i’ll give you even more faces to fuel you~ ahaha!"
     return
 
 # submod header
