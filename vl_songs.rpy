@@ -150,7 +150,7 @@ init 5 python:
     )
 
 label mas_song_machinelove:
-    m 1dub "{i}So can we wander for a spell? And livе in parallel?{/i}"
+    m 1dub "{i}So can we wander for a spell? And live in parallel?{/i}"
     m 1hublb "{i}I want it to be true, to be like you,{/i}"
     m 3hublb "{i}My heart sings a chorus out of tune~{/i}"
     m 2dublb "{i}And I could leave it on a shelf,{/i}"
