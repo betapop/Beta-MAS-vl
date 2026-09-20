@@ -413,6 +413,64 @@ label vl_cutenessaggro:
     m 7tfblu "And who knows, maybe i’ll give you even more faces to fuel you~ ahaha!"
     return
 
+define vl_brushdialogue = ["Maybe I should switch up my hairstyle...", "Hopefully it isn't tangled, ahaha...", "All the brushing is making me sleepy...", "Oh, I think you missed this part...", "Hmm... I wonder where we got this brush..."]
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="vl_brushhair",
+            category=["monika"],
+            prompt="Can I brush your hair?",
+            random=False,
+            pool=True,
+            aff_range=(mas_aff.HAPPY, None)
+        )
+    )
+
+label vl_brushhair:
+    m 3hublb "Of course you can, [mas_get_player_nickname()]."
+    $ HKBHideButtons()
+    $ disable_esc()
+    scene black with dissolve
+    $ vl_brushtalk = renpy.random.choice(vl_brushdialogue) 
+    pause 2
+    m "[vl_brushtalk]"
+    menu:
+        "All done.":
+            pass
+    pause 2
+    $ enable_esc()
+    $ HKBShowButtons()
+    call spaceroom(scene_change=True)
+    m 5dubsb "Gosh, that felt really nice. Thank you for doing that, [player]~"
+    m 1subsb "I love you!"
+    return "love"
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="vl_shareclothes",
+            category=["clothes"],
+            prompt="Sharing Clothes",
+            random=True,
+            pool=False,
+            aff_range=(mas_aff.AFFECTIONATE, None)
+        )
+    )
+
+label vl_shareclothes:
+    m "Hey... [player]?"
+    m "Sometimes I wish we could share clothes."
+    m "Imagine me in your favorite hoodie or sweater..."
+    m "And likewise, you wearing one of mine."
+    m "It's something I'd love to do when I get to your reality, of course..."
+    m "...{w=0.5}But I can't help but want it here too."
+    m "Although, maybe it isn't all bad. You tend to spoil me quite a lot~"
+    m "Regardless... When I do come to your reality..."
+    m "Expect half your clothes to be in my closet! Ahaha~"
+
 # submod header
 
 init -990 python in mas_submod_utils:
