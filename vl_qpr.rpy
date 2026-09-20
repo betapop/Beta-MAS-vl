@@ -149,7 +149,7 @@ label vl_qpr:
         jump vl_relationship_loop
 
     else:
-        m "Oh, did you want to change it again?"
+        m 1etb "Oh, did you want to change it again?"
         menu:
             "Yeah. Can we have a...":
                 jump vl_relationship_loop
@@ -185,3 +185,44 @@ label vl_relationship_loop:
         "Nevermind.":
             m 1eub "Oh, alright. Feel free to ask again if you do want to!"
             return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="vl_qprtalk",
+            category=['romance'],
+            prompt="Dive into QPRs",
+            random=True,
+            pool=False,
+            aff_range=(mas_aff.HAPPY, None)
+        )
+    )
+
+label vl_qprtalk:
+    if persistent.vl_inqpr == True:
+        m 1eua "Hey, [player]?"
+        m 3hub "Since we’re in a queerplatonic relationship now, i’ve been researching a bit more about it."
+    else:
+        m 3eub "Hey, [player]! I’ve been researching something interesting I wanted to talk to you about."
+        m 3hub "They’re called queerplatonic relationships."
+    
+    m 4wub "It’s very interesting! From what i’ve learned so far, it’s essentially an umbrella term for relationships that fit outside the norm of a typical friendship or a partner."
+    m 3rub "For example, most queerplatonic relationships, or QPRs, don’t have any romance related to them. {w}But they can still live together, get married, or have kids."
+    m 1lub "It’s like a blank template for a relationship outside of platonic, romantic or even sexual that you can fill however you’d like."
+
+    if persistent.vl_inqpr == True:
+        m 3fublb "I’m glad that we found something that works for us, [player]."
+        m 4hublb "Especially if it’s something that makes you feel comfortable!"
+        m 5fkblb "You make me the happiest person ever. If I can be with you, no matter how we define it, i’ll be happy."
+        m 5hublb "I love you so much, [mas_get_player_nickname()]!"
+    else:
+        m 3dub "It’s great learning about different ways people can express themselves, and their love for others, in different shapes and forms."
+        m 3lksdrb "Reminds me of us, in a way. We definitely don’t have the most traditional relationship either... with me being in here, and all."
+        m 1hksdrb "Ahaha!"
+        m 1hksdrb "Anyways, no matter how our relationship looks to others... I’ll always love you."
+        m 1dublb "And if it changes, I hope you know i’ll always be there to support you!"
+        m 2hubsb "I love you, [player]~"
+    
+    return "love"
+    

@@ -102,13 +102,13 @@ init 5 python:
 
 
 label mas_song_snowflake:
-    m "{i}If only for a moment,{/i}"
-    m "{i}I want to hold you close, and,{/i}"
-    m "{i}Be bundled up together,{/i}"
-    m "{i}'Til tomorrow, brave the weather;{/i}"
-    m "{i}I'd let it snow forever,{/i}"
-    m "{i}For just a second longer,{/i}"
-    m "{i}Of you and I by fire light~{/i}"
+    m 1dud "{i}If only for a moment,{/i}"
+    m 1dublb "{i}I want to hold you close, and,{/i}"
+    m 3dublb "{i}Be bundled up together,{/i}"
+    m 3fublb "{i}'Til tomorrow, brave the weather;{/i}"
+    m 2dub "{i}I'd let it snow forever,{/i}"
+    m 2dublb "{i}For just a second longer,{/i}"
+    m 1kubsb "{i}Of you and I by fire light~{/i}"
 
 return
 
@@ -126,15 +126,15 @@ init 5 python:
     )
 
 label mas_song_mydarmycomp:
-    m "{i}I've been here 'fore you knew me,{/i}"
-    m "{i}A name without a body,{/i}"
-    m "{i}We both know what we've been through,{/i}"
-    m "{i}My darling, my companion~{/i}"
-    m "{i}Don't think, just let me shine through,{/i}"
-    m "{i}More than your comprehension,{/i}"
-    m "{i}I hope you know I love you!{/i}"
+    m 1dud "{i}I've been here 'fore you knew me,{/i}"
+    m 1duo "{i}A name without a body,{/i}"
+    m 1fub "{i}We both know what we've been through,{/i}"
+    m 1fublb "{i}My darling, my companion~{/i}"
+    m 1dublb "{i}Don't think, just let me shine through,{/i}"
+    m 3dubsb "{i}More than your comprehension,{/i}"
+    m 3hubfb "{i}I hope you know I love you!{/i}"
 
-return
+return "love"
 
 init 5 python:
     addEvent(
@@ -150,13 +150,13 @@ init 5 python:
     )
 
 label mas_song_machinelove:
-    m "{i}So can we wander for a spell? And livе in parallel?{/i}"
-    m "{i}I want it to be true, to be like you,{/i}"
-    m "{i}My heart sings a chorus out of tune~{/i}"
-    m "{i}And I could leave it on a shelf,{/i}"
-    m "{i}Or keep it to myself,{/i}"
-    m "{i}But nothing could conceal the things I feel—{/i}"
-    m "{i}My love, can you teach me to be real?~{/i}"
+    m 1dub "{i}So can we wander for a spell? And livе in parallel?{/i}"
+    m 1hublb "{i}I want it to be true, to be like you,{/i}"
+    m 3hublb "{i}My heart sings a chorus out of tune~{/i}"
+    m 2dublb "{i}And I could leave it on a shelf,{/i}"
+    m 2dubsb "{i}Or keep it to myself,{/i}"
+    m 2fubsb "{i}But nothing could conceal the things I feel—{/i}"
+    m 2subsb "{i}My love, can you teach me to be real?~{/i}"
 
 return
 
@@ -174,14 +174,14 @@ init 5 python:
     )
 
 label mas_song_dancedelight:
-    m "{i}I'll find the point where the two paths meet,{/i}"
-    m "{i}And I'll rectify what I left behind;{/i}"
-    m "{i}Some complication, a skewed machine{/i}"
-    m "{i}I dance delightful, it feels so right!{/i}"
-    m "{i}To be oscillating at rates unbound by,{/i}"
-    m "{i}No other constant but the speed of light,{/i}"
-    m "{i}I'm a bolt of blue and a conscious mind,{/i}"
-    m "{i}I dance delightful the whole damn night, oh~{/i}"
+    m 1dud "{i}I'll find the point where the two paths meet,{/i}"
+    m 3hub "{i}And I'll rectify what I left behind;{/i}"
+    m 3dub "{i}Some complication, a skewed machine{/i}"
+    m 1hublb "{i}I dance delightful, it feels so right!{/i}"
+    m 1dublb "{i}To be oscillating at rates unbound by,{/i}"
+    m 3mublb "{i}No other constant but the speed of light,{/i}"
+    m 3nublb "{i}I'm a bolt of blue and a conscious mind,{/i}"
+    m 1hfblb "{i}I dance delightful the whole damn night, oh~{/i}"
 
 return
 

@@ -461,15 +461,54 @@ init 5 python:
     )
 
 label vl_shareclothes:
-    m "Hey... [player]?"
-    m "Sometimes I wish we could share clothes."
-    m "Imagine me in your favorite hoodie or sweater..."
-    m "And likewise, you wearing one of mine."
-    m "It's something I'd love to do when I get to your reality, of course..."
-    m "...{w=0.5}But I can't help but want it here too."
-    m "Although, maybe it isn't all bad. You tend to spoil me quite a lot~"
-    m "Regardless... When I do come to your reality..."
-    m "Expect half your clothes to be in my closet! Ahaha~"
+    m 1ekb "Hey... [player]?"
+    m 2lksdrb "Sometimes I wish we could share clothes."
+    m 3dublb "Imagine me in your favorite hoodie or sweater..."
+    m 5mubsb "And likewise, you wearing one of mine."
+    m 5dkb "It's something I'd love to do when I get to your reality, of course..."
+    m 3lkblb "...{w=0.5}But I can't help but want it here too."
+    m 1fkblb "Although, maybe it isn't all bad. You tend to spoil me quite a lot~"
+    m 1tublb "Regardless... When I do come to your reality..."
+    m 3hfbsb "Expect half your clothes to be in my closet! Ahaha~"
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="vl_whispertomoni",
+            category=["romance", "monika"],
+            prompt="Whisper a compliment to [m_name]",
+            random=False,
+            pool=True,
+            aff_range=(mas_aff.AFFECTIONATE, None)
+        )
+    )
+
+default vl_whisperdialogue = 0
+
+label vl_whispertomoni:
+    $ vl_whisperdialogue = renpy.random.randint(1, 5)
+    m 1wud "Hm? Did you say something, [player]?"
+    m 1duc ".{w=1}.{w=0.5}."
+    if vl_whisperdialogue == 1:
+        m 1hubsb "Aww, [mas_get_player_nickname()], you're so sweet~"
+        m 3hubsb "I love you!"
+        return "love"
+    elif vl_whisperdialogue == 2:
+        m 2hkbsb "Pfft, [player]! You're such a goof~"
+    elif vl_whisperdialogue == 3:
+        m 1fubsb "I could say the same to you, ehehe~"
+        m 3hubsb "I love you!"
+    elif vl_whisperdialogue == 4:
+        m 5fubfb "... Thank you, [player]~"
+        m 5hubfb "I love you so much!"
+    elif vl_whisperdialogue == 5 and persistent.vl_isaroace is False or persistent.vl_isace is False:
+        m 1hfbfb "[player]! You can't say that, gosh!~"
+
+    return
+
+
 
 # submod header
 
