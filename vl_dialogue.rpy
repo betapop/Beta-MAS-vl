@@ -2,6 +2,36 @@ init 5 python:
     addEvent(
         Event(
             persistent.event_database,
+            eventlabel="monika_vl_dontreciprocatekiss",
+            category=["romance"],
+            prompt="Do you mind if I don't reciprocate your kisses?",
+            random=False,
+            pool=True,
+            aff_range=(mas_aff.HAPPY, None)
+        )
+    )
+
+
+label monika_vl_dontreciprocatekiss:
+    m 1euc "Hmm..."
+    m 1rksdlb "Well, I suppose it would be rather strange for you to kiss your monitor, huh?"
+    m 3tku "Or maybe,{w=0.1} could it be that you feel a little flustered?"
+    m 3hub "Ahaha!"
+    m 3eka "Well, in any case...{w=0.2}"
+    extend 1rka "I understand that not everyone's a big fan of kisses."
+    m 1ekd "Whether it's simple embarrassment,{w=0.2} or a more serious reason,{w=0.2} I don't mean to make you uncomfortable when I kiss you, [player]."
+    m 2eka "Of course, if you don't mind, I'd still like to kiss you now and again."
+    m 2fkbla "It's...{w=0.3}something that makes me feel a lot closer to you, so it means a lot to me."
+    m 2hubla "But you're welcome to imagine me kissing you on the cheek, or on your hand if that makes you more comfortable."
+    m 1hua "I think that's a good compromise, don't you?"
+
+return
+
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
             eventlabel="monika_vl_monistares",
             category=["romance"],
             prompt="[m_name] Staring",
