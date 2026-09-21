@@ -2,17 +2,22 @@ init 5 python:
     addEvent(
         Event(
             persistent.event_database,
-            eventlabel="monika_vl_dontreciprocatekiss",
+            eventlabel="vl_dontreciprocatekiss",
             category=["romance"],
             prompt="Do you mind if I don't reciprocate your kisses?",
             random=False,
             pool=True,
-            aff_range=(mas_aff.HAPPY, None)
+            rules={"no_unlock":None},
+            conditional=(
+                "persistent._mas_first_kiss is not None"
+            ),
+            action=EV_ACT_UNLOCK,
+            aff_range=(mas_aff.AFFECTIONATE, None)
         )
     )
 
 
-label monika_vl_dontreciprocatekiss:
+label vl_dontreciprocatekiss:
     m 1euc "Hmm..."
     m 1rksdlb "Well, I suppose it would be rather strange for you to kiss your monitor, huh?"
     m 3tku "Or maybe,{w=0.1} could it be that you feel a little flustered?"
