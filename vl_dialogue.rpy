@@ -50,24 +50,24 @@ label monika_vl_kissher:
                 m 2dubsa "Mmm..."
                 m 1hkbssdlb "Oh! It’s already over~?"
                 m 3hkbfb "My cheek feels so warm now, ahaha!"
-                return "love"
+                return
 
             "Nose.":
                 m 3hkbsb "Ah— [player]! That tickles~"
                 m 4tkbsb "Thanks for the kiss, ehehe."
-                return "love"
+                return
         
             "Neck.":
                 m 2tsbsb "Oh~ The neck, huh?"
                 m 2msbfb "Well, I can’t say I didn’t enjoy it."
                 m 2ktbfb "Want to go again?"
                 m 3hubfb "Ahaha, just teasing!"
-                return "love"
+                return
         
             "Hand.":
                 m 1sublb "I feel so royal~ hehe."
                 m 3hubsb "Thank you, my kind knight!"
-                return "love"
+                return
         
     else:
         "I don't think she's ready for that yet... "
@@ -98,15 +98,15 @@ label monika_vl_supkiss:
 
         if ev.shown_count == 0:
             m 3hfbfb "You can't just suprise me like that~"
-            return "love"
+            return
 
         elif ev.shown_count == 1:
             m 5hkbfb "Im never ready!~"
-            return "love"
+            return
 
         else:
             m 1tsbfb "Pff, again, [player]~?"
-            return "love"
+            return
 
     else:
         "I don't think she's ready for that yet... "
@@ -241,7 +241,7 @@ label monika_vl_blowkiss:
     m 1subsb "Caught it! And now it’s mine’s forever~"
     m 2tubsb "Sorry [player], but you’re never getting that kiss back, ahaha!"
 
-return "love"
+return
 
 init 5 python:
     addEvent(
