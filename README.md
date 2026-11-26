@@ -14,7 +14,7 @@ A submod that adds more romance in your [Monika After Story](https://github.com/
 
 Alternatively, you can take the `Virtual Love` folder from inside the `Submods` folder and put it into your submod folder. Whichever works better for you!
 
-If you have version 1.0 or 1.1 of this mod, you will likely see topics you've already read unmarked again. Sorry for the inconvenience! In better news, some topics have been rewritten— so look out for that while playing. 
+If you had version 1.0 or 1.1 of this mod, you will likely see topics you've already read unmarked again. Sorry for the inconvenience! In better news, some topics have been rewritten— so look out for that while playing. 
 
 
 ## 💓 Special Thanks to...
