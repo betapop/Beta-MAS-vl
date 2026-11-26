@@ -2,7 +2,7 @@ init 5 python:
     addEvent(
         Event(
             persistent._mas_songs_database,
-            eventlabel="mas_song_boytoy",
+            eventlabel="vl_song_boytoy",
             prompt="Boy Toy",
             category=[store.mas_songs.TYPE_SHORT],
             random=True,
@@ -11,13 +11,13 @@ init 5 python:
         code="SNG"
     )
 
-label mas_song_boytoy:
+label vl_song_boytoy:
     m  1dub "{i}I've been going through changes,{/i}"
     m  1kub "{i}And I feel so elated,{/i}"
     m  1hub "{i}To be here in your big blue world.{/i}"
     m  1dud "{i}I know I'm not your favorite,{/i}"
     m  1duo "{i}But I like when you say it,{/i}"
-    m  1hub "{i}I don't need you to be my girl~{/i}"
+    m  1hub "{i}I don't need you to be my [boy]~{/i}"
 
 return
 
@@ -25,7 +25,7 @@ init 5 python:
     addEvent(
         Event(
             persistent._mas_songs_database,
-            eventlabel="mas_song_mylove",
+            eventlabel="vl_song_mylove",
             prompt="My Love Mine All Mine",
             category=[store.mas_songs.TYPE_SHORT],
             random=True,
@@ -34,7 +34,7 @@ init 5 python:
         code="SNG"
     )
 
-label mas_song_mylove:
+label vl_song_mylove:
     m  1dud "{i}Moon, tell me if I could,{/i}"
     m  1dkd "{i}Send up my heart to you?{/i}"
     m  1dkb "{i}So, when I die, which I must do...{/i}"
@@ -45,7 +45,7 @@ init 5 python:
     addEvent(
         Event(
             persistent._mas_songs_database,
-            eventlabel="mas_song_calmmedown",
+            eventlabel="vl_song_calmmedown",
             prompt="Calm Me Down",
             category=[store.mas_songs.TYPE_SHORT],
             random=True,
@@ -54,7 +54,7 @@ init 5 python:
         code="SNG"
     )
 
-label mas_song_calmmedown:
+label vl_song_calmmedown:
     m  1dublb "{i}Use your body...{/i}"
     m  1dubsd "{i}Use it to put me to sleep~{/i}"
     m  1fubfb "{i}Your body, oh...{/i}"
@@ -67,7 +67,7 @@ init 5 python:
     addEvent(
         Event(
             persistent._mas_songs_database,
-            eventlabel="mas_song_thisdec",
+            eventlabel="vl_song_thisdec",
             prompt="This December",
             category=[store.mas_songs.TYPE_SHORT],
             random=True,
@@ -76,7 +76,7 @@ init 5 python:
         code="SNG"
     )
 
-label mas_song_thisdec:
+label vl_song_thisdec:
     m  1dud "{i}Only in my darkest moments can I see the light~{/i}"
     m  1dub "{i}I think I'm prone to getting blinded when it's bright...{/i}"
     m  1kub "{i}Well, this December, I'll remember,{/i}"
@@ -91,7 +91,7 @@ init 5 python:
     addEvent(
         Event(
             persistent._mas_songs_database,
-            eventlabel="mas_song_snowflake",
+            eventlabel="vl_song_snowflake",
             prompt="snowflake",
             category=[store.mas_songs.TYPE_SHORT],
             random=True,
@@ -101,7 +101,7 @@ init 5 python:
     )
 
 
-label mas_song_snowflake:
+label vl_song_snowflake:
     m 1dud "{i}If only for a moment,{/i}"
     m 1dublb "{i}I want to hold you close, and,{/i}"
     m 3dublb "{i}Be bundled up together,{/i}"
@@ -116,7 +116,7 @@ init 5 python:
     addEvent(
         Event(
             persistent._mas_songs_database,
-            eventlabel="mas_song_mydarmycomp",
+            eventlabel="vl_song_mydarmycomp",
             prompt="My Darling, My Companion",
             category=[store.mas_songs.TYPE_SHORT],
             random=True,
@@ -125,7 +125,7 @@ init 5 python:
         code="SNG"
     )
 
-label mas_song_mydarmycomp:
+label vl_song_mydarmycomp:
     m 1dud "{i}I've been here 'fore you knew me,{/i}"
     m 1duo "{i}A name without a body,{/i}"
     m 1fub "{i}We both know what we've been through,{/i}"
@@ -140,7 +140,7 @@ init 5 python:
     addEvent(
         Event(
             persistent._mas_songs_database,
-            eventlabel="mas_song_machinelove",
+            eventlabel="vl_song_machinelove",
             prompt="Machine Love",
             category=[store.mas_songs.TYPE_SHORT],
             random=True,
@@ -149,7 +149,7 @@ init 5 python:
         code="SNG"
     )
 
-label mas_song_machinelove:
+label vl_song_machinelove:
     m 1dub "{i}So can we wander for a spell? And live in parallel?{/i}"
     m 1hublb "{i}I want it to be true, to be like you,{/i}"
     m 3hublb "{i}My heart sings a chorus out of tune~{/i}"
@@ -164,7 +164,7 @@ init 5 python:
     addEvent(
         Event(
             persistent._mas_songs_database,
-            eventlabel="mas_song_dancedelight",
+            eventlabel="vl_song_dancedelight",
             prompt="Dance Delightful",
             category=[store.mas_songs.TYPE_SHORT],
             random=True,
@@ -173,7 +173,7 @@ init 5 python:
         code="SNG"
     )
 
-label mas_song_dancedelight:
+label vl_song_dancedelight:
     m 1dud "{i}I'll find the point where the two paths meet,{/i}"
     m 3hub "{i}And I'll rectify what I left behind;{/i}"
     m 3dub "{i}Some complication, a skewed machine{/i}"

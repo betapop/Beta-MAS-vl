@@ -1,3 +1,6 @@
+init 5 python in mas_bookmarks_derand:
+    label_prefix_map["vl_"] = label_prefix_map["monika_"]
+
 init 5 python:
     addEvent(
         Event(
@@ -37,7 +40,7 @@ init 5 python:
     addEvent(
         Event(
             persistent.event_database,
-            eventlabel="monika_vl_monistares",
+            eventlabel="vl_monistares",
             category=["romance"],
             prompt="[m_name] Staring",
             random=True,
@@ -47,7 +50,7 @@ init 5 python:
     )
 
 
-label monika_vl_monistares:
+label vl_monistares:
     m 1eua "..."
     m 1wua "....."
     m 1fublu "........"
@@ -69,7 +72,7 @@ init 5 python:
     addEvent(
         Event(
             persistent.event_database,
-            eventlabel="monika_vl_kissher",
+            eventlabel="vl_kissher",
             category=["romance"],
             prompt="Kiss [m_name] on the...",
             random=False,
@@ -78,7 +81,7 @@ init 5 python:
         )
     )
 
-label monika_vl_kissher:
+label vl_kissher:
     if mas_isMoniEnamored(higher=True) and persistent._mas_first_kiss is not None:
         menu:
             "Cheek.":
@@ -114,7 +117,7 @@ init 5 python:
     addEvent(
         Event(
             persistent.event_database,
-            eventlabel="monika_vl_supkiss",
+            eventlabel="vl_supkiss",
             category=["romance"],
             prompt="Suprise kiss [m_name]",
             random=False,
@@ -124,12 +127,12 @@ init 5 python:
     )
 
 
-label monika_vl_supkiss:
+label vl_supkiss:
     if mas_isMoniEnamored(higher=True) and persistent._mas_first_kiss is not None:
 
         m 2wubld "H-huh? [player]?"
         call monika_kissing_motion_short
-        $ ev = mas_getEV("monika_vl_supkiss")
+        $ ev = mas_getEV("vl_supkiss")
 
         if ev.shown_count == 0:
             m 3hfbfb "You can't just suprise me like that~"
@@ -194,7 +197,7 @@ init 5 python:
     addEvent(
         Event(
             persistent.event_database,
-            eventlabel="monika_vl_snugclose",
+            eventlabel="vl_snugclose",
             category=["romance"],
             prompt="Snuggle closer",
             random=False,
@@ -204,7 +207,7 @@ init 5 python:
     )
 
 
-label monika_vl_snugclose:
+label vl_snugclose:
     m 2tubsb "Moving closer? Well, I won’t complain~"
     m 5rkbfb "I just wish we could be right next to each other, cuddling..."
     m 5hkbfb "But right now, this is the next best thing. Ahaha!"
@@ -216,7 +219,7 @@ init 5 python:
     addEvent(
         Event(
             persistent.event_database,
-            eventlabel="monika_vl_hug",
+            eventlabel="vl_hug",
             category=["romance"],
             prompt="Give [m_name] a hug",
             random=False,
@@ -226,7 +229,7 @@ init 5 python:
     )
 
 
-label monika_vl_hug:
+label vl_hug:
     show monika 6dubla
     pause 5.0
     m 2fublb "Thank you, [player]. That felt wonderful."
@@ -239,7 +242,7 @@ init 5 python:
     addEvent(
         Event(
             persistent.event_database,
-            eventlabel="monika_vl_loveworm",
+            eventlabel="vl_loveworm",
             category=["us"],
             prompt="Would you love me if I was a worm?",
             random=False,
@@ -249,7 +252,7 @@ init 5 python:
     )
 
 
-label monika_vl_loveworm:
+label vl_loveworm:
     m 2tub "That’s a silly question, [player]."
     m 3rtb "I mean... what if you’re a worm as we speak and I just don’t know?"
     m 3hkblb "That wouldn’t shake my love for you any less!"
@@ -262,7 +265,7 @@ init 5 python:
     addEvent(
         Event(
             persistent.event_database,
-            eventlabel="monika_vl_blowkiss",
+            eventlabel="vl_blowkiss",
             category=["romance"],
             prompt="Blow a kiss",
             random=False,
@@ -272,7 +275,7 @@ init 5 python:
     )
 
 
-label monika_vl_blowkiss:
+label vl_blowkiss:
     m 1subsb "Caught it! And now it’s mine’s forever~"
     m 2tubsb "Sorry [player], but you’re never getting that kiss back, ahaha!"
 
@@ -282,7 +285,7 @@ init 5 python:
     addEvent(
         Event(
             persistent.event_database,
-            eventlabel="monika_vl_hotdogsan",
+            eventlabel="vl_hotdogsan",
             category=["misc"],
             prompt="Is a Hotdog a Sandwich?",
             random=True,
@@ -292,7 +295,7 @@ init 5 python:
     )
 
 
-label monika_vl_hotdogsan:
+label vl_hotdogsan:
     m 1eub "[player], I had a question."
     m 3tub "...Is a hot dog a sandwich?{nw}"
     $ _history_list.pop()
@@ -342,7 +345,7 @@ init 5 python:
     addEvent(
         Event(
             persistent.event_database,
-            eventlabel="monika_vl_randlove",
+            eventlabel="vl_randlove",
             category=["romance"],
             prompt="Suprise 'I Love You'",
             random=True,
@@ -351,7 +354,7 @@ init 5 python:
         )
     )
 
-label monika_vl_randlove:
+label vl_randlove:
     m 3wub "Hey, [player]!"
     $ _history_list.pop()
     menu:
@@ -542,16 +545,3 @@ label vl_whispertomoni:
         m 1hfbfb "[player]! You can't say that, gosh!~"
 
     return
-
-
-
-# submod header
-
-init -990 python in mas_submod_utils:
-    Submod(
-        author="Betapop",
-        name="Virtual Love",
-        description="A submod that adds more romance options! Find the Github {a=https://github.com/betapop/Beta-MAS-vl}{i}{u}here!{/u}{/i}{/a}",
-        version="1.1.0",
-    )
-
