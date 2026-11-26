@@ -35,6 +35,7 @@ label vl_dontreciprocatekiss:
 
 return
 
+# ^ written by Lewn :) ^
 
 init 5 python:
     addEvent(
